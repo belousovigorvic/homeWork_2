@@ -136,47 +136,50 @@ var starBucksMenu = {
 alert('Hello, welcome to Starbucks!')
 var coffeeOrTea = prompt('What would you like, coffee or tea?')
 
-// Проверка, уточняем заказ
-if (starBucksMenu.hasOwnProperty(coffeeOrTea) && coffeeOrTea === 'coffee') {
-    var chooseCoffee = prompt('What coffee would you like? espresso, americano, latte, cappuccino')
-    if (starBucksMenu.coffee.hasOwnProperty(chooseCoffee) && chooseCoffee === 'espresso' || chooseCoffee === 'americano' || chooseCoffee === 'latte' || chooseCoffee === 'cappuccino') {
-        var sizeCoffee = prompt(`what size ${chooseCoffee} would you like, small, mid or large`)
-        if (starBucksMenu.coffee[chooseCoffee].hasOwnProperty(sizeCoffee) && sizeCoffee === 'small' || sizeCoffee === 'mid' || sizeCoffee === 'large') {
-            var sugar = confirm('add sugar?')
-            if (sugar) {
-                alert(`Your order ${sizeCoffee} ${chooseCoffee} with sugar, Your price ${starBucksMenu.coffee[chooseCoffee][sizeCoffee].price} som`)
-            } else if (!sugar) {
-                alert(`Your order ${sizeCoffee} ${chooseCoffee} sugar-free, Your price ${starBucksMenu.coffee[chooseCoffee][sizeCoffee].price} som`)
+if (coffeeOrTea === 'coffee') {
+    if (starBucksMenu.hasOwnProperty(coffeeOrTea)) {
+        var chooseCoffee = prompt('What coffee would you like? espresso, americano, latte, cappuccino')
+        if (starBucksMenu.coffee.hasOwnProperty(chooseCoffee)) {
+            var sizeCoffee = prompt(`what size ${chooseCoffee} would you like, small, mid or large?`)
+            if (starBucksMenu.coffee[chooseCoffee].hasOwnProperty(sizeCoffee)) {
+                var sugar = confirm('add sugar?')
+                if (sugar) {
+                    alert(`Your order ${sizeCoffee} ${chooseCoffee} with sugar, Your price ${starBucksMenu.coffee[chooseCoffee][sizeCoffee].price} som`)
+                } else {
+                    alert(`Your order ${sizeCoffee} ${chooseCoffee} sugar-free, Your price ${starBucksMenu.coffee[chooseCoffee][sizeCoffee].price} som`)
+                }
             } else {
-                alert('No such drink! Try again')
+                alert('error')
             }
         } else {
-            alert('No such drink! Try again')
+            alert('error')
         }
     } else {
-        alert('No such drink! Try again')
+        alert('error')
     }
-} else if (starBucksMenu.hasOwnProperty(coffeeOrTea) && coffeeOrTea === 'tea') {
-    var chooseTea = prompt('What tea would you like? green, black, oolong, puer')
-    if (starBucksMenu.tea.hasOwnProperty(chooseTea) && chooseTea === 'green' || chooseTea === 'black' || chooseTea === 'oolong' || chooseTea === 'puer') {
-        var sizeTea = prompt(`what size ${chooseTea} would you like, small, mid or large`)
-        if (starBucksMenu.tea[chooseTea].hasOwnProperty(sizeTea) && sizeTea === 'small' || sizeTea === 'mid' || sizeTea === 'large') {
-            var sugar = confirm('add sugar?')
-            if (sugar) {
-                alert(`Your order ${sizeTea} ${chooseTea} tea, with sugar, Your price ${starBucksMenu.tea[chooseTea][sizeTea].price} som`)
-            } else if (!sugar) {
-                alert(`Your order ${sizeTea} ${chooseTea} tea, sugar-free, Your price ${starBucksMenu.tea[chooseTea][sizeTea].price} som`)
+}  else if (coffeeOrTea === 'tea') {
+    if (starBucksMenu.hasOwnProperty(coffeeOrTea)) {
+        var chooseTea = prompt('What tea would you like? green, black, oolong, puer')
+        if (starBucksMenu.tea.hasOwnProperty(chooseTea)) {
+            var sizeTea = prompt(`What size ${chooseTea} would you like, small, mid or large`)
+            if (starBucksMenu.tea[chooseTea].hasOwnProperty(sizeTea)) {
+                var sugar = confirm('add sugar?')
+                if (sugar) {
+                    alert(`Your order ${sizeTea} ${chooseTea} tea, with sugar, Your price ${starBucksMenu.tea[chooseTea][sizeTea].price} som`)
+                } else {
+                    alert(`Your order ${sizeTea} ${chooseTea} tea, sugar-free, Your price ${starBucksMenu.tea[chooseTea][sizeTea].price} som`)
+                }
             } else {
-                alert('No such drink! Try again')
+                alert('error')
             }
         } else {
-            alert('No such drink! Try again')
+            alert('error')
         }
     } else {
-        alert('No such drink! Try again')
+        alert('error')
     }
 } else {
-    alert('No such drink! Try again')
+    alert('error')
 }
 
 
