@@ -140,7 +140,7 @@ if (coffeeOrTea === 'coffee') {
     if (starBucksMenu.hasOwnProperty(coffeeOrTea)) {
         var chooseCoffee = prompt('What coffee would you like? espresso, americano, latte, cappuccino')
         if (starBucksMenu.coffee.hasOwnProperty(chooseCoffee)) {
-            var sizeCoffee = prompt(`what size ${chooseCoffee} would you like, small, mid or large?`)
+            var sizeCoffee = prompt(`What size ${chooseCoffee} would you like, small, mid or large?`)
             if (starBucksMenu.coffee[chooseCoffee].hasOwnProperty(sizeCoffee)) {
                 var sugar = confirm('add sugar?')
                 if (sugar) {
